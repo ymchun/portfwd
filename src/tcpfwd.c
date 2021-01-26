@@ -629,7 +629,7 @@ int main(int argc, char *argv[])
 		for (i = 0; i < nfds; i++) {
 			struct epoll_event *evp = &events[i];
 			int *evptr = (int *)evp->data.ptr, efd = -1;
-			struct proxy_conn *conn;
+			struct proxy_conn *conn = NULL;
 			int io_state = 0;
 
 			/* 'evptr = NULL' indicates the socket is closed. */
